@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Tarefas {% endblock %}
+
+{% block content %}
+
+  <form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Telefone</label>
+    <input type="tel" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Endereço</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="Digite seu endereço">
+  </div>    <label for="inputCity" class="form-label">Cidade</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Estado</label>
+    <select id="inputState" class="form-select">
+      <option selected>Piaui</option>
+      <option>São Paulo</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Cep</label>
+    <input type="text" class="form-control" id="inputZip">
+  </div>
+  <div class="col-auto">
+    <label for="inputEmail4" class="form-label">Tipo de Serviço</label>
+    <select class="form-select" id="autoSizingSelect">
+      <option selected>Escolha o Serviço</option>
+      <option value="1">Limpeza profunda</option>
+      <option value="2">Limpeza simples</option>
+    </select>
+  </div>
+      <div class="col-md-2">
+    <label for="inputEmail4" class="form-label">Valor</label>
+    <input type="text" class="form-control" id="inputEmail4" value="R$">
+  </div>
+
+      <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+      <label class="form-check-label" for="inlineFormCheck">
+        Adicionar Desconto de 10%
+      </label>
+    </div>
+  </div>
+
+      <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Atendente</label>
+    <input type="text" class="form-control" id="inputEmail4">
+     </div>
+        <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Data do atendimento</label>
+    <input type="datetime-local" class="form-control" id="inputEmail4">
+     </div>
+         <div class="col-md-4">
+    <label for="inputEmail4" class="form-label">Data da Limpeza</label>
+    <input type="date" class="form-control" id="inputEmail4">
+     </div>
+
+ <div class="col-auto">
+    <label for="inputEmail4" class="form-label">Status</label>
+    <select class="form-select" id="autoSizingSelect" >
+      <option selected>Pendente</option>
+      <option value="1">Realizado</option>
+      <option value="2">Cancelado</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Concluir</button>
+  </div>
+
+</form>
+
+{% endblock %}
+

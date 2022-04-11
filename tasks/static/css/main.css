@@ -1,0 +1,175 @@
+/* Titulo */
+
+#Titulo{
+    text-align: center;
+}
+.container-fluid{
+
+    padding: 0;
+}
+.container-fluid row{
+    margin: 0;
+}
+/* NavBar */
+
+.navbar{
+    border-bottom: 1px solid #333333;
+    margin-bottom: 20px;
+}
+.navbar-nav{
+    margin: auto;
+}
+
+.navbar-brand{
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav a.nav-link{
+    color: #333;
+    letter-spacing: 1px;
+}
+/* Botão de Cadastrar */
+#add-link{
+    text-decoration: none;
+}
+.add-div{
+    background-color: cornflowerblue;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+.fa-plus{
+    color: white;
+    margin-right: 10px;
+    margin-left: 5px;
+
+}
+/* Search */
+.fas.fa-search{
+    position: absolute;
+    top: 290px;
+    right: 200px;
+    cursor: pointer;
+}
+.search-div{
+    padding: 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+/* lista de Atendimento */
+.list-div{
+    padding: 0;
+
+}
+.task-list{
+    padding-left: 0;
+}
+.task-item{
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #ccc;
+}
+.task-item.done{
+    background-color:  #cccccc;
+}
+.fa-trash,.fa-edit,.fa-check{
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+.fa-trash{
+    color: red;
+}
+.fa-edit{
+    color: green;
+}
+.fa-check{
+    color: RED;
+}
+.done .fa-check{
+    color: #3476e2;
+}
+
+/* Rodapé */
+
+footer{
+    background-color: #333;
+    height: 200px;
+    border-top: 2px solid #202020;
+}
+footer p{
+    color: white;
+    top: 50%;
+    text-align: center;
+    position: relative;
+}
+/* Messages */
+ul.messages{
+    padding: 0;
+}
+ul.messages li{
+    list-style: none;
+}
+
+/* Paginação */
+
+.pagination{
+    margin-bottom:20px ;
+}
+.step-links{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.step-links .current{
+     margin-left: 5px;
+    margin-right: 5px;
+}
+/* Login */
+
+.auth-card{
+    margin-bottom: 30px;
+}
+/* Dashboard */
+.dashboard{
+    padding: 0;
+    width: 100%;
+    display: block;
+
+}
+.dashboard h4{
+    font-size: 20px;
+}
+.dashboard span{
+    font-size: 40px;
+    display: block;
+    width: 100%;
+}
+.dashboard-box{
+    float: left;
+    background-color: #dfdfdf;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 130px;
+    width: 32%;
+    text-align: center;
+}
+#dashboard-lastdays{
+    background-color: dodgerblue;
+}
+#dashboard-concluidos{
+    background-color: Green;
+}
+#dashboard-pendentes{
+    background-color: red;
+}

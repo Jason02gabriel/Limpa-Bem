@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Pedido {% endblock %}
+
+{% block content %}
+
+     <div class="offset-1 col-10 list-div">
+
+         <h1>Pedido Codido Nº {{ task.id }}</h1>
+         <h4>Nome do Cliente: {{ task.cliente }}</h4>
+         <h4>Telefone/Celular: {{ task.telefone }}</h4>
+         <h4>Logradouro: {{ task.endereco }}</h4>
+         <h4>Bairro: {{ task.bairro }}</h4>
+         <h4>Municipio - UF: {{ task.cidade}} - {{ task.estado }}</h4>
+         <h4>Cep: {{ task.cep }}</h4>
+         <h4>Tipo de Serviço: {{ task.Serviço }}</h4>
+         <h4>Valor: {{ task.preço }}</h4>
+         <h4>Data da limpeza: {{ task.data_limpeza }}</h4>
+         <h4>Atendente: {{ request.user.username }}</h4>
+         <h4>Data da Atendimento: {{ task.data_atendimento}}</h4>
+         <h4>Status do Pedido: {{ task.done }}</h4>
+        <h4>OBS: {{ task.obs }}</h4>
+
+
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Pedidos {% endblock %}
+
+{% block content %}
+
+
+    <div class="offset-1 col-10 list-div">
+        <h1 id="Titulo">Pedidos</h1>
+        <div class="container dashboard">
+            <div class="col-4 dashboard-box" id="dashboard-lastdays">
+                <h4>Finalizados nos últimos 30 dias</h4>
+                <span>0</span>
+            </div>
+            <div class="col-4 dashboard-box" id="dashboard-pendentes">
+                <h4>Pedidos pendentes</h4>
+                <span>{{ tasksdoing }}</span>
+            </div>
+            <div class="col-4 dashboard-box" id="dashboard-concluidos">
+                <h4>Pedidos concluidos</h4>
+                <span>{{ tasksdone }}</span>
+            </div>
+        </div>
+
+     <!-- btn-cadastrar  -->
+    <a id="add-link" href="newtask/">
+        <div class="col-2 add-div">
+            <i class="fa-solid fa-plus"></i>Cadastrar
+
+        </div>
+    </a>
+    <!-- Fim btn-cadastrar -->
+
+    <!-- search  -->
+        <div class="col-9 search-div">
+            <form method="GET" id="search-form">
+                <input class="form-control" type="text" id="search" name="search" placeholder="Digite o codigo do pedido para buscar" value="{{ request.GET.search }}">
+                <i class="fas fa-search" id="search-btn"></i>
+            </form>
+        </div>
+    <!-- Fim search  -->
+
+    <!--  messages  -->
+    {% if messages %}
+        <ul class="messages"></ul>
+            {% for message in messages %}
+                <li {% if message.tags %}class="alert alert-{{ message.tags }}" {% endif %} >
+
+                        {{ message }}
+
+                </li>
+
+            {% endfor %}
+    {% endif %}
+     <!-- Fim messages  -->
+
+     <!-- Lista de pedidos  -->
+        <ul class="task-list">
+            {% for task in tasks %}
+                {% if task.done == 'pendente' %}
+                    <li class="task-item">
+                {% else %}
+                    <li class="task-item done">
+
+            {% endif %}
+                    <span>Nº do Pedido:</span>
+                 <span>{{task.id}}</span> --
+                    <span>Endereço:</span>
+                 <span>{{task.endereco}}</span> --
+                    <span>Status:</span>
+                  <span>{{task.done}}</span>--
+                    <span><a href="/task/{{task.id}}">vizualizar pedido</a></span>
+                    <a href="delete/{{ task.id }}" CLASS="delete-btn"><span><i class="fa-solid fa-trash"></i></span></a>
+                     <a href="edit/{{ task.id }}"><span><i class="fa-solid fa-edit"></i></span></a>
+                     <a href="changestatus/{{ task.id }}" CLASS="change-btn"><span><i class="fa-solid fa-check"></i></span></a>
+            </li>
+            {% endfor %}
+        </ul>
+    <!-- FIM Lista de pedidos  -->
+
+    <!-- Paginação -->
+        <div class="pagination">
+            <span class="step-links">
+                {%  if tasks.has_previous%}
+                    <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+
+                {% endif %}
+                {% if tasks.paginator.num_pages%}
+                    <span class="current">
+                        {{ tasks.number }} de {{ tasks.paginator.num_pages }}
+                    </span>
+                {% endif %}
+                    {%  if tasks.has_next%}
+                        <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+
+                    {% endif %}
+<!-- FIM Paginação -->
+            </span>
+
+
+    </div>
+
+</div>
+{% endblock %}
+
